@@ -14,6 +14,7 @@ class EIT_Settings
 public:
 	// List of settings collected
 	uint8_t num_repeats;
+	uint8_t inj_pattern;
 	byte analog_ref_voltage; // 1 to 5
 	byte sending_order;	// 0,1 or 2
 	unsigned int delay_after_mux_on;	

@@ -16,6 +16,7 @@
 void EIT_Settings::recordSettings()
 {
   num_repeats = Serial.parseInt();
+  inj_pattern = Serial.parseInt();
   analog_ref_voltage = Serial.parseInt();
   _prescaler_value = Serial.parseInt();
   sending_order = Serial.parseInt();

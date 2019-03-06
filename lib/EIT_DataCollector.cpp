@@ -92,18 +92,25 @@ void EIT_DataCollector::readVoltageForChannel(uint8_t channel_no)
 {
   // Turn on the right switches in both the muxes
   switchMux(0, _mux_vector[channel_no]);
-  switchMux(1, _mux_vector[channel_no + 1]);
+  switchMux(1, _mux_vector[channel_no + inj_pattern]);
 
   // Give a delay before reading analog-in pins.
   delayMicroseconds(delay_after_mux_on);
 
-  uint8_t from_pin = _mux_vector[channel_no + 2];
-
   // Read the analog pins from the other (turned off) electrodes (for 'n' number of times)
   for (uint8_t i = 0; i < num_repeats; i++) {
-      for (uint8_t remaining_pins = 0;remaining_pins < 14; remaining_pins++)  {
-          _voltage_data[remaining_pins][channel_no] += analogRead(_mux_vector[remaining_pins + from_pin]);
-      }
+
+    uint8_t rem_pins = 0;
+    for(uint8_t in_pins = 1; in_pins < inj_pattern; in_pins++){
+      _voltage_data[rem_pins][channel_no] += analogRead(_mux_vector[in_pins + channel_no]);
+      rem_pins++;
+    }
+
+    for (uint8_t out_pins = inj_pattern + 1; out_pins<15; out_pins++){
+      _voltage_data[rem_pins][channel_no] += analogRead(_mux_vector[out_pins + channel_no]);
+      rem_pins++;
+    }
+
   }
 }
 
