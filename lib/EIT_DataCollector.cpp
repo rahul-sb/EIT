@@ -106,7 +106,7 @@ void EIT_DataCollector::readVoltageForChannel(uint8_t channel_no)
       rem_pins++;
     }
 
-    for (uint8_t out_pins = inj_pattern + 1; out_pins<15; out_pins++){
+    for (uint8_t out_pins = inj_pattern + 1; out_pins<16; out_pins++){
       _voltage_data[rem_pins][channel_no] += analogRead(_mux_vector[out_pins + channel_no]);
       rem_pins++;
     }
