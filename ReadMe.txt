@@ -10,7 +10,6 @@
  * VII.  How data is printed
  * VIII. Run, Pause and Stop Data collection
  * IX.   Important References and Links
- * X.    TO DO
  *
  *
  * 
@@ -252,18 +251,6 @@
  * -----------------------------------------------------------------------------------------------------------------------
  *
  * 
- *
- * ======================================================================================================================================
- *
- * X. TO DO:
- * ~~~~~~~~~~~
- *
- * 1. In this code for the voltage readings the current is passed between adjacent electrodes. If in the future the requirement of 
- *    changing the way in which current is passed (such as diagonally opposite, etc.), is needed then the necessary changes has to be made.
- *
- * 2. Support for Teensy 3.6 board has to be incorporated.
- *
- *
  *
  * ======================================================================================================================================
  */
