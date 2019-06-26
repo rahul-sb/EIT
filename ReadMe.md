@@ -55,17 +55,18 @@ Note: In both the cases mentioned aboue, the value is printed out as a value fro
 
   For sending order:
  
-      0     |        1      |        2    |      
-------------|---------------|-------------|
-  Voltage_1 |   Voltage_All |  Resistance | 
-  Voltage_1 |   Voltage_All |  Voltage_All| 
-  Voltage_1 |   Voltage_All |  Resistance | 
-  Voltage_1 |   Voltage_All |  Voltage_All| 
-  .     |       .       |      .      |
-  .     |       .       |      .      |
-  .     |       .       |      .      |
- 
-  where,
+0     |        1      |        2    |      
+------|---------------|-------------|
+Voltage_1 |   Voltage_All |  Resistance | 
+Voltage_1 |   Voltage_All |  Voltage_All| 
+Voltage_1 |   Voltage_All |  Resistance | 
+Voltage_1 |   Voltage_All |  Voltage_All| 
+.     |       .       |      .      |
+.     |       .       |      .      |
+.     |       .       |      .      |
+
+
+where,
 
     Voltage_1 :   
           Voltage values of the remaining 14 electordes when current is passing through any two adjacent
@@ -81,20 +82,26 @@ Note: In both the cases mentioned aboue, the value is printed out as a value fro
           The potential difference between any two electrodes. All the 120 values are sent.
  
     prescaler_value :
-          You can tell arduino at what speed to collect the data. This is determined by the prescaler value of the analog read function in arduino. Refer the table in Section X, to see acceptable values.
+          You can tell arduino at what speed to collect the data. This is determined by the prescaler value 
+          of the analog read function in arduino. Refer the table in Section X, to see acceptable values.
    
     analog_ref_voltage  : 
-          You can tell arduino the reference value to compare against when performing analog read. For the resistance data collection this value is set to 5V. But for Voltage data collection, you can set any of the available reference values. Refer Section 9 for more details.
+          You can tell arduino the reference value to compare against when performing analog read. For the 
+          resistance data collection this value is set to 5V. But for Voltage data collection, you can set
+          any of the available reference values. Refer Section 9 for more details.
    
     num_repeats : 
-          You can specify how many times arduino must read the analog read from the remaining electrodes (only for Voltage_All) when current is passed between any two adjacent electrodes.
+          You can specify how many times arduino must read the analog read from the remaining electrodes 
+          (only for Voltage_All) when current is passed between any two adjacent electrodes.
    
     delay_after_mux_on  :
-          You can specify the amount of time (in microseconds) the arduino can start collecting data after the muxes have been turned on.
+          You can specify the amount of time (in microseconds) the arduino can start collecting data after 
+          the muxes have been turned on.
    
     time_period :
     		 You can specify the time period in milliseconds that the arduino should collect the data. 
-    		 Note: If you give a time_period that is smaller than the time taken to collect and send data, then there won't de any delay introduced.
+    		 Note: If you give a time_period that is smaller than the time taken to collect and send data, then 
+         there won't de any delay introduced.
  
   
 ## 5.  Passing Settings to Arduino:
@@ -103,14 +110,14 @@ Note: In both the cases mentioned aboue, the value is printed out as a value fro
   You can customize data collection by sending these values in a specific order to the arduino (after it has been connected serially, ofcourse).
   The order in which you have to send is:
   
-      Setting           |    Range  |
-------------------------|---------------------------------|
-  num_repeats        |  [0, 255) |
-  analog_ref_voltage |  [1, 5]   |
-  prescaler_value    |  [1, 7]   // Refer section 9 |
-  sending_order      |  [0, 4]   |
-  delay_after_mux_on |  [0, 65,535) |
-  time_period			   |  [0, 4,198,400] // In milliseconds |
+Setting           |    Range  |
+------------------|-----------|
+num_repeats        |  [0, 255) |
+analog_ref_voltage |  [1, 5]   |
+prescaler_value    |  [1, 7]   // Refer section 9 |
+sending_order      |  [0, 4]   |
+delay_after_mux_on |  [0, 65,535) |
+time_period			   |  [0, 4,198,400] // In milliseconds |
   
 These values may be sent with a ' ' inbetween or a comma inbetween of each variable can be in a separate line.
 
@@ -123,13 +130,13 @@ The 2 LED pins that are connected to digital pins are mentioned in the variable 
 It is specified as {Green_LED, Red_LED}.
 
     Green_LED:
-      Shows that the serial connection has been established.
-      If ON: Active Communication
-      If OFF : Communication Disconnected
+        Shows that the serial connection has been established.
+        If ON: Active Communication
+        If OFF : Communication Disconnected
     Red_LED:
-      Denotes the data collection status.
-      If ON: Data has been collected
-      If OFF: Data is being collected or Arduino is in "Pause" or "Stop" data collection state
+        Denotes the data collection status.
+        If ON: Data has been collected
+        If OFF: Data is being collected or Arduino is in "Pause" or "Stop" data collection state
  
  
 
