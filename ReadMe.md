@@ -175,10 +175,11 @@ Pause |	 0  |
 Stop  |	-1  |
 Resume after pause |	 1  |
 Switch current channel if sending order is 0 | 	 1  |
-Warn about possible circuit failure	|   -2  // The green and red led's flash together at a constant frequency and
-  														// arduino goes to "Stop" state |               
-  
- 
+Warn about possible circuit failure	|   -2   |               
+
+Note: When "-2" is sent the green and red led's flash together at a constant frequency and arduino goes to "Stop" state
+
+
 ## 9. Important References and Links:
 
 Reference Table for Prescaler:
