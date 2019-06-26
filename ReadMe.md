@@ -4,26 +4,26 @@
 
 ## Table of Contents:
 
-1. [Introduction](#introduction)
-2. [Electrical connection](#electrical-connection)
-3. [How data is collected](#how-data-is-collected)
-4. [Customizing data collection](#customizing-data-collection)
-5. [Passing Settings to Arduino](#passing-settings-to-arduino)
-6. [Function of LED pins](#function-of-led-pins)
-7. [How data is printed](#how-data-is-printed)
-8. [Run, Pause and Stop Data collection](#run,-pause-and-stop-data-collection)
-9. [Important References and Links](#important-references-and-links)
-10.	[How to run code?](#how-to-run-code?)
+* [Introduction](#introduction)
+* [Electrical connection](#electrical-connection)
+* [How data is collected](#how-data-is-collected)
+* [Customizing data collection](#customizing-data-collection)
+* [Passing Settings to Arduino](#passing-settings-to-arduino)
+* [Function of LED pins](#function-of-led-pins)
+* [How data is printed](#how-data-is-printed)
+* [Run, Pause and Stop Data collection](#run,-pause-and-stop-data-collection)
+* [Important References and Links](#important-references-and-links)
+*	[How to run code?](#how-to-run-code?)
  
  
   
-## 1.  Introduction
+## Introduction
  
 This code primarily collects the data that is required to generate an Electrical Impedance Tomography (EIT) Image. It also collects the
 resistance between any two electrodes.
  
   
-## 2. Electrical connection
+## Electrical connection
   
 The hardware setup consists of 16 electrodes (arranged evenly in a circular fashion) connected to a sensor / conductive material. 
 The electrodes are connected to the 16 analog pins of the arduino mega and also the 16 channels of the three DG407 Muxes. 
@@ -33,7 +33,7 @@ The 'D' pin of mux1 is connected to ground.
 The 'D' pin of mux2 is connected to VCC and a constant resistor. (Used to measure resistance, using a voltage divider circuit)
 
 
-## 3. How data is collected
+## How data is collected
  
 One can collect two types of data from this code:
 
@@ -47,7 +47,7 @@ One can collect two types of data from this code:
 Note: In both the cases mentioned aboue, the value is printed out as a value from 0 to 1023, one has to convert that data according to the Analog Reference that was given. The analog reference for the voltage divider circuit is 5V and for the EIT, it is what you give initially (more on this in section IV, V and X).
 
 
-## 4.  Customizing data collection:
+## Customizing data collection:
  
   You can collect data using this code in the following ways:
 
@@ -102,7 +102,7 @@ where,
          there won't de any delay introduced.
  
   
-## 5.  Passing Settings to Arduino:
+## Passing Settings to Arduino:
  
   The communication with arduino is purely SERIAL. So send these settings via serial and NOT I2C or any other modes of communication.
   You can customize data collection by sending these values in a specific order to the arduino (after it has been connected serially, ofcourse).
@@ -122,7 +122,7 @@ These values may be sent with a ' ' inbetween or a comma inbetween of each varia
 Note: There are no checks performed on these values, please ensure that you send the approporate values within the bounds.
    
   
-## 6.  Function of LED pins:
+## Function of LED pins:
   
 The 2 LED pins that are connected to digital pins are mentioned in the variable "indicator_pins".
 It is specified as {Green_LED, Red_LED}.
@@ -139,7 +139,7 @@ It is specified as {Green_LED, Red_LED}.
  
 
   
-## 7.  How data is printed:
+## How data is printed:
  
 The values of any variable Voltage_1 or Voltage_All or Resistance (see section IV) are sent with a ' ' (space) in between them.
 After all the values of the variable are finished printing, then a newline and carraiage return character is sent. This is done to
@@ -163,7 +163,7 @@ Note: The values of these variables are separated by ' ' (blank space). The vari
   
 
  
-## 8. Run, Pause and Stop Data collection:
+## Run, Pause and Stop Data collection:
   
 While the arduino is collecting data to
     
@@ -178,7 +178,7 @@ Warn about possible circuit failure	|   -2   |
 Note: When "-2" is sent the green and red led's flash together at a constant frequency and arduino goes to "Stop" state
 
 
-## 9. Important References and Links:
+## Important References and Links:
 
 Reference Table for Prescaler:
 
@@ -216,7 +216,7 @@ For list of baud rates see Page 226 in
 
 http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf
  
-## 10.	How to run code?
+## How to run code?
 	
 Copy and paste the contents of "/lib" to "C:\Users\<user>\Documents\Arduino\libraries\EIT" and then upload the "main.ino" in "/src" folder to Arduino.
 
