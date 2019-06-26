@@ -79,6 +79,24 @@ where,
     Resistance :   
           The potential difference between any two electrodes. All the 120 values are sent.
  
+  
+## Passing Settings to Arduino:
+ 
+  The communication with arduino is purely SERIAL. So send these settings via serial and NOT I2C or any other modes of communication.
+  You can customize data collection by sending these values in a specific order to the arduino (after it has been connected serially, ofcourse).
+  The order in which you have to send is:
+  
+Setting           |    Range  |
+------------------|-----------|
+num_repeats        |  [0, 255) |
+analog_ref_voltage |  [1, 5]   |
+prescaler_value    |  [1, 7]   // Refer [here](#important-references-and-links) |
+sending_order      |  [0, 4]   |
+delay_after_mux_on |  [0, 65,535) |
+time_period			   |  [0, 4,198,400] // In milliseconds |
+
+where,
+
     prescaler_value :
           You can tell arduino at what speed to collect the data. This is determined by the prescaler value 
           of the analog read function in arduino. Refer the table in Section X, to see acceptable values.
@@ -100,22 +118,7 @@ where,
          You can specify the time period in milliseconds that the arduino should collect the data. 
          Note: If you give a time_period that is smaller than the time taken to collect and send data, then 
          there won't de any delay introduced.
- 
-  
-## Passing Settings to Arduino:
- 
-  The communication with arduino is purely SERIAL. So send these settings via serial and NOT I2C or any other modes of communication.
-  You can customize data collection by sending these values in a specific order to the arduino (after it has been connected serially, ofcourse).
-  The order in which you have to send is:
-  
-Setting           |    Range  |
-------------------|-----------|
-num_repeats        |  [0, 255) |
-analog_ref_voltage |  [1, 5]   |
-prescaler_value    |  [1, 7]   // Refer [here](#important-references-and-links) |
-sending_order      |  [0, 4]   |
-delay_after_mux_on |  [0, 65,535) |
-time_period			   |  [0, 4,198,400] // In milliseconds |
+         
   
 These values may be sent with a ' ' inbetween or a comma inbetween of each variable can be in a separate line.
 
