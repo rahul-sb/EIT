@@ -4,16 +4,16 @@
 
 ## Table of Contents:
 
-1. [Introduction](#introduction)
-2. [Electrical connection](#elec_connection)
-3. [How data is collected](#data_collection)
-4. [Customizing data collection](#customizing_data)
-5. [Passing Settings to Arduino](#settings)
-6. [Function of LED pins](#led_pins)
-7. [How data is printed](#printing)
-8. [Run, Pause and Stop Data collection](#run_stop)
-9. [Important References and Links](#imp_links)
-10.	[How to run code?](#how_to_run)
+1. [Introduction](#Introduction)
+2. [Electrical connection](#Electrical-connection)
+3. [How data is collected](#How-data-is-collected)
+4. [Customizing data collection](#Customizing-data-collection)
+5. [Passing Settings to Arduino](#Passing-Settings-to-Arduino)
+6. [Function of LED pins](#Function-of-LED-pins)
+7. [How data is printed](#How-data-is-printed)
+8. [Run, Pause and Stop Data collection](#Run,-Pause-and-Stop-Data-collection)
+9. [Important References and Links](#Important-References-and-Links)
+10.	[How to run code?](#How-to-run-code?)
  
  
   
