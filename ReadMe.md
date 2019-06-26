@@ -86,7 +86,7 @@ where,
     analog_ref_voltage  : 
           You can tell arduino the reference value to compare against when performing analog read. For the 
           resistance data collection this value is set to 5V. But for Voltage data collection, you can set
-          any of the available reference values. Refer Section 9 for more details.
+          any of the available reference values. Refer [here](#important-references-and-links) for more details.
    
     num_repeats : 
           You can specify how many times arduino must read the analog read from the remaining electrodes 
@@ -112,7 +112,7 @@ Setting           |    Range  |
 ------------------|-----------|
 num_repeats        |  [0, 255) |
 analog_ref_voltage |  [1, 5]   |
-prescaler_value    |  [1, 7]   // Refer section 9 |
+prescaler_value    |  [1, 7]   // Refer [here](#important-references-and-links) |
 sending_order      |  [0, 4]   |
 delay_after_mux_on |  [0, 65,535) |
 time_period			   |  [0, 4,198,400] // In milliseconds |
@@ -218,6 +218,6 @@ http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontro
  
 ## How to run code?
 	
-Copy and paste the contents of "/lib" to "C:\Users\<user>\Documents\Arduino\libraries\EIT" and then upload the "main.ino" in "/src" folder to Arduino.
+Copy and paste the contents of "/lib" to "C:\Users\user-name\Documents\Arduino\libraries\EIT" and then upload the "main.ino" in "/src" folder to Arduino.
 
 To understand the code structure see UML diagram in "/docs" folder.
