@@ -4,16 +4,16 @@
 
 ## Table of Contents:
 
-1. Introduction
-2. Electrical connection
-3. How data is collected
-4. Customizing data collection
-5. Passing Settings to Arduino
-6. Function of LED pins
-7. How data is printed
-8. Run, Pause and Stop Data collection
-9. Important References and Links
-10.	How to run code?
+1. [Introduction](#introduction)
+2. [Electrical connection](#elec_connection)
+3. [How data is collected](#data_collection)
+4. [Customizing data collection](#customizing_data)
+5. [Passing Settings to Arduino](#settings)
+6. [Function of LED pins](#led_pins)
+7. [How data is printed](#printing)
+8. [Run, Pause and Stop Data collection](#run_stop)
+9. [Important References and Links](#imp_links)
+10.	[How to run code?](#how_to_run)
  
  
   
@@ -28,10 +28,8 @@ resistance between any two electrodes.
 The hardware setup consists of 16 electrodes (arranged evenly in a circular fashion) connected to a sensor / conductive material. 
 The electrodes are connected to the 16 analog pins of the arduino mega and also the 16 channels of the three DG407 Muxes. 
 
-The 'D' pin of mux0 is connected to a  constant current source.
-
-The 'D' pin of mux1 is connected to ground.
-
+The 'D' pin of mux0 is connected to a  constant current source.  
+The 'D' pin of mux1 is connected to ground.  
 The 'D' pin of mux2 is connected to VCC and a constant resistor. (Used to measure resistance, using a voltage divider circuit)
 
 
