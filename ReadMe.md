@@ -99,8 +99,8 @@ where,
           the muxes have been turned on.
    
     time_period :
-    		 You can specify the time period in milliseconds that the arduino should collect the data. 
-    		 Note: If you give a time_period that is smaller than the time taken to collect and send data, then 
+         You can specify the time period in milliseconds that the arduino should collect the data. 
+         Note: If you give a time_period that is smaller than the time taken to collect and send data, then 
          there won't de any delay introduced.
  
   
@@ -169,14 +169,14 @@ Note: The values of these variables are separated by ' ' (blank space). The vari
   
 While the arduino is collecting data to
     
-    Action| Message to send |
-    ------|-----------------|
-	   Pause |	 0  |
-	   Stop  |	-1  |
-	   Resume after pause |	 1  |
-	   Switch current channel if sending order is 0 | 	 1  |
-	   Warn about possible circuit failure	|   -2  // The green and red led's flash together at a constant frequency and
-	   														// arduino goes to "Stop" state |               
+Action| Message to send |
+------|-----------------|
+Pause |	 0  |
+Stop  |	-1  |
+Resume after pause |	 1  |
+Switch current channel if sending order is 0 | 	 1  |
+Warn about possible circuit failure	|   -2  // The green and red led's flash together at a constant frequency and
+  														// arduino goes to "Stop" state |               
   
  
 ## 9. Important References and Links:
