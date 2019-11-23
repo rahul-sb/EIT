@@ -1,5 +1,5 @@
 
-# Electrical Impedance Tomography (EIT) Data Collection using Arduino
+# Electrical Impedance Tomography (EIT) using Arduino and Matlab
 
 
 ## Table of Contents:
@@ -12,14 +12,14 @@
 * [How data is printed](#how-data-is-printed)
 * [Run, Pause and Stop Data collection](#run,-pause-and-stop-data-collection)
 * [Important References and Links](#important-references-and-links)
-*	[How to run code?](#how-to-run-code?)
- 
+*	[How to run Arduino code?](#how-to-run-arduino-code?)
+* [How to run Matlab code?](#how-to-run-matlab-code?)
  
   
 ## Introduction
  
 This code primarily collects the data that is required to generate an Electrical Impedance Tomography (EIT) Image. It also collects the
-resistance between any two electrodes.
+resistance between any two electrodes. The arduino code works only on Arduino Mega. The Matlab code works only on Matlab versions 2019a and above.
  
   
 ## Electrical connection
@@ -197,8 +197,11 @@ For list of baud rates see Page 226 in
 
 http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf
  
-## How to run code?
+## How to run Arduino code?
 	
-Copy and paste the contents of "/lib" to "C:\Users\user-name\Documents\Arduino\libraries\EIT" and then upload the "main.ino" in "/src" folder to Arduino.
+Copy and paste the contents of "/lib" to "C:\Users\user-name\Documents\Arduino\libraries\" and then upload the "EIT.ino" in "/Arduino/src/EIT" folder to Arduino.
 
-To understand the code structure see UML diagram in "/docs" folder.
+## How to run Matlab code?
+
+Specify the necessary settings in all the files in "Matlab/Settings/". Make sure EIDORS v3.9.1 or above is installed. Run the "main.m" code in "Matlab/Main"
+
