@@ -63,6 +63,7 @@ sending_order      |  [0, 4]   |
 delay_after_mux_on |  [0, 65,535) |
 
 where,
+
     num_repeats :
           Number of times "analogread" is called (for both voltage and resistance data)
 
