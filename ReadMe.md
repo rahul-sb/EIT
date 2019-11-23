@@ -12,7 +12,7 @@
 * [How data is printed](#how-data-is-printed)
 * [Run, Pause and Stop Data collection](#run,-pause-and-stop-data-collection)
 * [Important References and Links](#important-references-and-links)
-*	[How to run Arduino code?](#how-to-run-arduino-code?)
+* [How to run Arduino code?](#how-to-run-arduino-code?)
 * [How to run Matlab code?](#how-to-run-matlab-code?)
  
   
@@ -196,6 +196,7 @@ https://www.intersil.com/content/dam/Intersil/documents/dg40/dg406-407.pdf
 For list of baud rates see Page 226 in
 
 http://ww1.microchip.com/downloads/en/DeviceDoc/Atmel-2549-8-bit-AVR-Microcontroller-ATmega640-1280-1281-2560-2561_datasheet.pdf
+ 
  
 ## How to run Arduino code?
 	
