@@ -1,6 +1,7 @@
 
 #include "stdint.h"
 #include "Arduino.h"
+#include "ReferenceTable.h"
 
 #ifndef PINS_H
 #define PINS_H
@@ -14,5 +15,7 @@ void set(Pins& pins, const uint8_t leds[2], const uint8_t muxes[3][5]);
 
 void turnLedOnOff(const Pins& pins, const uint8_t& led_no, const uint8_t& on_or_off);
 void turnMuxOnOff(const Pins& pins, const uint8_t& mux_no, const uint8_t& on_or_off);
+
+void switchMuxState(const Pins& pins, const uint8_t& mux_no, const ReferenceTable& table, const uint8_t& binary_index);
 
 #endif

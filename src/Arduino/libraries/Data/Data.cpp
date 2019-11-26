@@ -45,13 +45,6 @@ void printResistance(const Data& data){
 }
 
 
-void switchMuxState(const Pins& pins, const uint8_t& mux_no, const ReferenceTable& table, const uint8_t& binary_index){
-	for (uint8_t i = 0; i < 4; i++) {
-		digitalWrite(pins.muxes[mux_no][3-i], table.binary_table[i][binary_index]);
-	}
-}
-
-
 void readVoltage(Data& data, const Settings& settings, const Pins& pins, const ReferenceTable& table){
 	// Set the reference voltage
 	setAdcRefVoltage(settings.adc_ref_voltage);

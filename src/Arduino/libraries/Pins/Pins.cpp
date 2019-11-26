@@ -30,3 +30,10 @@ void turnLedOnOff(const Pins& pins, const uint8_t& led_no, const uint8_t& on_or_
 void turnMuxOnOff(const Pins& pins, const uint8_t& mux_no, const uint8_t& on_or_off){
 	digitalWrite(pins.muxes[mux_no][4], on_or_off);
 }
+
+
+void switchMuxState(const Pins& pins, const uint8_t& mux_no, const ReferenceTable& table, const uint8_t& binary_index){
+	for (uint8_t i = 0; i < 4; i++) {
+		digitalWrite(pins.muxes[mux_no][3-i], table.binary_table[i][binary_index]);
+	}
+}
