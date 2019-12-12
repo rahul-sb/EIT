@@ -58,18 +58,21 @@ void loop(){
 
 	switch(settings.sending_order){
 		case 0:
-				readVoltage(data, settings, pins, ref_table);				
+				readVoltage(data, settings, pins, ref_table);	
+        turnLedOnOff(pins,1,1);	// Turn on the 2nd LED to denote that the data has been collected
 				printVoltage(data);
 				clearVoltage(data);
 				break;
 		case 1: 
 				readResistance(data, settings, pins, ref_table);
+				turnLedOnOff(pins,1,1);  // Turn on the 2nd LED to denote that the data has been collected
 				printResistance(data);
 				clearResistance(data);
 				break;
 		default:
 				readVoltage(data, settings, pins, ref_table);
 				readResistance(data, settings, pins, ref_table);
+				turnLedOnOff(pins,1,1);  // Turn on the 2nd LED to denote that the data has been collected
 				printVoltage(data);
 				printResistance(data);
 				clearAll(data);
@@ -77,9 +80,6 @@ void loop(){
 
 	// Send all the data before proceeding
 	Serial.flush();
-
-	// Turn on the 2nd LED to denote that the data has been collected
-	turnLedOnOff(pins,1,1);
 
 	// Check if any instruction is available else proceed to next iteration
 	if (Serial.available() > 0){
